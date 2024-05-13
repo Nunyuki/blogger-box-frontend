@@ -1,0 +1,27 @@
+<!--
+<div *ngIf="posts && posts.length">
+  <h2>Blog Posts</h2>
+    <ul>
+      <li *ngFor="let post of posts">
+        <h3>{{post.title}}</h3>
+        <p>{{post.content}}</p>
+        <p>{{post.createdDate}}</p>
+        <p>{{post.category.name}}</p>
+      </li>
+    </ul>
+</div>
+
+<div *ngIf="!posts || posts.length===0">
+  <p>No post available.</p>
+</div>
+-->
+
+<div *ngIf="posts && posts.length">
+  <div *ngFor="let post of posts">
+    <app-post-list-item [post]="post"></app-post-list-item>
+  </div>
+</div>
+
+<div *ngIf="!posts || posts.length===0">
+  <p>No post available.</p>
+</div>
