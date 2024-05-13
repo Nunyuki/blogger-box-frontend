@@ -1,23 +1,20 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable, catchError, of } from "rxjs";
+import { environment } from "../environment/environment";
 
 import { POSTS, Post } from "../data/post";
+import { Category } from "../data/category";
 
 @Injectable()
-export class PostService {
-  //private postsUrl = 'http://localhost:8080/v1/categories';
-  private postsUrl = '${environment.apiUrl}v1/categories';
+export class CategoryService {
+  //private categoriesUrl = 'http://localhost:8080/v1/categories';
+  private categoriesUrl = '${environment.apiUrl}v1/categories';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient){}
 
-  /**getPosts(): Observable<Post[]> {
-    const posts = of(POSTS);
-    return posts;
-  }**/
-
-  getPosts(): Observable<Post[]> {
-    return this.http.get<Post[]>(this.postsUrl).pipe(catchError(this.handleError<Post[]>('getPosts')));
+  getAll() : Observable<Category[]> {
+    return this.http.get<Category[]>(this.categoriesUrl).pipe(catchError(this.handleError<Category[]>('getAll')));
   }
 
   protected handleError<T>(operation = 'operation', result?: T) {
