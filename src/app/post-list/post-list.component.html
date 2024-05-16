@@ -16,12 +16,14 @@
 </div>
 -->
 
-<div *ngIf="posts && posts.length">
-  <div *ngFor="let post of posts">
-    <app-post-list-item [post]="post"></app-post-list-item>
-  </div>
+<div class="container">
+  <h1 class="text-center">Blog</h1>
+  <p class="text-center">Welcome to the blog. Here you can find all the latest news and updates from the team.</p>
+  <app-post-list-item class="pt-4 p-2" *ngFor="let post of posts" [post]="post" />
 </div>
 
-<div *ngIf="!posts || posts.length===0">
-  <p>No post available.</p>
+
+
+<div *ngIf="!posts || posts.length === 0">
+  <h2>No blog posts available.</h2>
 </div>

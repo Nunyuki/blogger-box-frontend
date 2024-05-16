@@ -3,13 +3,13 @@ import { HttpClient } from "@angular/common/http";
 import { Observable, catchError, of } from "rxjs";
 import { environment } from "../environment/environment";
 
-import { POSTS, Post } from "../data/post";
+import { /*POSTS,*/ Post } from "../data/post";
 import { Category } from "../data/category";
 
 @Injectable()
 export class CategoryService {
   //private categoriesUrl = 'http://localhost:8080/v1/categories';
-  private categoriesUrl = '${environment.apiUrl}v1/categories';
+  private categoriesUrl = `${environment.apiUrl}v1/categories`;
 
   constructor(private http: HttpClient){}
 

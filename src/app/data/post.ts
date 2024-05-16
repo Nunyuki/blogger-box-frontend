@@ -1,7 +1,7 @@
 import { Category } from "./category";
 
 
-export const POSTS = [
+/*export const POSTS = [
   {
     id: 'c9f3bcb3-dd91-4d79-88d8-5b9d99d8cd20',
     title:
@@ -169,7 +169,7 @@ export const POSTS = [
     },
   },
 ];
-
+*/
 export interface Post {
   id: string;
   title: string;

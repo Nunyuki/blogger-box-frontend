@@ -1,10 +1,9 @@
-<div class="pt-4 p-2" *ngIf="post">
-  <h3>{{post.title}}</h3>
-  <p>{{post.content}}</p>
-  <div> 
-    <span class="badge rounded-pill text-bg-light">
-      {{post.category.name}}
-    </span>
-    <span>{{post.createdDate | date: "medium"}}</span>
+<div>
+  <h3>{{ post.title }}</h3>
+  <p>{{ post.content }}</p>
+  <div class="d-flex">
+    <span class="badge rounded-pill text-bg-light">{{ post.category.name }}</span>
+    <span class="text-secondary">{{ post.createdDate | date: 'dd/MM/yyyy HH:mm' }}</span>
   </div>
+  <hr class="hr" />
 </div>

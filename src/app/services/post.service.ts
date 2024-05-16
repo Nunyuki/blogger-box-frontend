@@ -2,12 +2,13 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable, catchError, of } from "rxjs";
 
-import { POSTS, Post } from "../data/post";
+import { /*POSTS,*/ Post } from "../data/post";
+import { environment } from "../environment/environment";
 
 @Injectable()
 export class PostService {
   //private postsUrl = 'http://localhost:8080/v1/categories';
-  private postsUrl = '${environment.apiUrl}v1/categories';
+  private postsUrl = `${environment.apiUrl}v1/posts`;
 
   constructor(private http: HttpClient) { }
 
