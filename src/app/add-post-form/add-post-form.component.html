@@ -1,16 +1,36 @@
 <div class="container">
   <form
-  [formGroup]="addPost">
+    [formGroup]="addPost"
+    class="needs-validation"
+    (ngSubmit)="onSubmit()">
     <div>
       <label>Title:</label>
-      <input type="text" class="form-control" formControlName="title">
+      <input type="text" class="form-control" formControlName="title"
+             [class.is-invalid]="title.invalid && title.touched"
+             [class.is-valid]="title.valid && title.touched">
+      <div *ngIf="title?.invalid && title.touched" class="invalid-feedback text-danger">
+        <div *ngIf="title?.errors?.['required']">Title is required</div>
+        <div *ngIf="title?.errors?.['minlength']">Title should be 5 characters or more</div>
+        <div *ngIf="title?.errors?.['maxlength']">Title should be 150 characters or less</div>
+      </div>
       <br>
     </div>
 
     <label>Category:</label>
-    <select name="category" id="category" class="form-control" formControlName="category"></select>
+    <select name="category" id="category" class="form-control" formControlName="category">
+      <option *ngFor="let category of categories" [value]="category">{{category.name}}</option>
+      <div *ngIf="category?.invalid && category.touched" class="invalid-feedback text-danger">
+        <div *ngIf="content?.errors?.['required']">Content is required</div>
+      </div>
+    </select>
     <br>
     <label>Content:</label>
-    <input type="text" class="form-control" formControlName="content">
+    <input type="text" class="form-control" formControlName="content"
+           [class.is-invalid]="content.invalid && content.touched"
+           [class.is-valid]="content.valid && content.touched">
+    <div *ngIf="content?.invalid && content.touched" class="invalid-feedback text-danger">
+      <div *ngIf="content?.errors?.['required']">Content is required</div>
+      <div *ngIf="content?.errors?.['maxlength']">Content should be 2500 characters or less</div>
+    </div>
   </form>
 </div>
