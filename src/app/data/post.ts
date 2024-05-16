@@ -1,5 +1,5 @@
 import { Category } from "./category";
-
+export type PostCreateInput=Omit<Post, "id">;
 
 /*export const POSTS = [
   {

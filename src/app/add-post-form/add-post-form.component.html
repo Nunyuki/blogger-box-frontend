@@ -1,0 +1,16 @@
+<div class="container">
+  <form
+  [formGroup]="addPost">
+    <div>
+      <label>Title:</label>
+      <input type="text" class="form-control" formControlName="title">
+      <br>
+    </div>
+
+    <label>Category:</label>
+    <select name="category" id="category" class="form-control" formControlName="category"></select>
+    <br>
+    <label>Content:</label>
+    <input type="text" class="form-control" formControlName="content">
+  </form>
+</div>
