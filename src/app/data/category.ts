@@ -12,7 +12,7 @@ const category:
   isActive:true,
 };
 
-/*export const CATEGORIES = [
+export const CATEGORIES = [
   {
     id: 'cf7df5b7-f42d-424a-bec3-1547f068b4ca',
     name: 'Adoption',
@@ -125,4 +125,4 @@ const category:
     id: '43ea19a3-5283-4fd6-8f28-a445df87d512',
     name: 'Money',
   },
-];*/
+];

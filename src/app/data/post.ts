@@ -1,7 +1,18 @@
 import { Category } from "./category";
-export type PostCreateInput=Omit<Post, "id">;
 
-/*export const POSTS = [
+export interface Post {
+  id: string;
+  title: string;
+  content: string;
+  createdDate: Date;
+  category: Category;
+}
+
+export type PostCreateInput = Omit<Post, 'id' | 'createdDate' | 'category'> & {
+  categoryId: string;
+};
+
+export const POSTS = [
   {
     id: 'c9f3bcb3-dd91-4d79-88d8-5b9d99d8cd20',
     title:
@@ -169,11 +180,3 @@ export type PostCreateInput=Omit<Post, "id">;
     },
   },
 ];
-*/
-export interface Post {
-  id: string;
-  title: string;
-  content: string;
-  createdDate: Date;
-  category: Category;
-}

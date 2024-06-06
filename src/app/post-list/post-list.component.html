@@ -1,24 +1,6 @@
-<!--
-<div *ngIf="posts && posts.length">
-  <h2>Blog Posts</h2>
-    <ul>
-      <li *ngFor="let post of posts">
-        <h3>{{post.title}}</h3>
-        <p>{{post.content}}</p>
-        <p>{{post.createdDate}}</p>
-        <p>{{post.category.name}}</p>
-      </li>
-    </ul>
-</div>
-
-<div *ngIf="!posts || posts.length===0">
-  <p>No post available.</p>
-</div>
--->
-
 <div class="container">
   <h1 class="text-center">Blog</h1>
-  <p class="text-center">Welcome to the blog. Here you can find all the latest news and updates from the team.</p>
+  <p class="text-center">Welcome to my blog</p>
   <app-post-list-item class="pt-4 p-2" *ngFor="let post of posts" [post]="post" />
 </div>
 

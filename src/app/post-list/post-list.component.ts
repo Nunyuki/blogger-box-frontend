@@ -19,7 +19,7 @@ export class PostListComponent implements OnInit {
 
   loadPosts(): void {
     this.PostService.getPosts().subscribe(posts => {
-      this.posts = posts;
+      this.posts = posts.reverse();
     });
   }
 }

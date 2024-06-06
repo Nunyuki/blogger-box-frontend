@@ -2,13 +2,10 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable, catchError, of } from "rxjs";
 import { environment } from "../environment/environment";
-
-import { /*POSTS,*/ Post } from "../data/post";
 import { Category, CategoryCreateInput } from "../data/category";
 
 @Injectable()
 export class CategoryService {
-  //private categoriesUrl = 'http://localhost:8080/v1/categories';
   private categoriesUrl = `${environment.apiUrl}v1/categories`;
 
   constructor(private http: HttpClient){}
@@ -27,6 +24,7 @@ export class CategoryService {
         catchError(this.handleError<Category>('update', category))
       )
   }
+
   protected handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(`${operation} failed: ${error.message}`, error); // log to console
@@ -34,6 +32,7 @@ export class CategoryService {
       return of(result as T);
     };
   }
+  
   delete(category: Category): Observable<boolean> {
     return this.http.delete<boolean>(`${this.categoriesUrl}/${category.id}`);
   }

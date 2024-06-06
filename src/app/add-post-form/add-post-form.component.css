@@ -1,0 +1,10 @@
+.form-button {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.container {
+  display: block;
+  margin-bottom: 20px;
+}
